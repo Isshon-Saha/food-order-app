@@ -47,9 +47,12 @@ const Modal = () => {
           <span>${ctx.totalAmount.toFixed(2)}</span>
         </div>
         {hasItems && (
-          <div className="flex flex-row items-center justify-center mt-4">
+          <div className="flex flex-row items-center mt-3 justify-evenly">
             <button className="font-bold btn btn-primary hover:btn-success font-fira">
               Buy now
+            </button>
+            <button onClick={()=>{ctx.clearCart()}} className="font-bold btn btn-warning hover:btn-error font-fira">
+              Clear Cart
             </button>
           </div>
         )}
