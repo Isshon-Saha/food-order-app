@@ -22,7 +22,7 @@ const Meal = (item) => {
       ctx.addItem({
         id: item.id,
         name: item.name,
-        price: (item.price * enteredAmount),
+        price: (+item.price * enteredAmount),
         amount: enteredAmount,
       });
     }
@@ -38,10 +38,10 @@ const Meal = (item) => {
         <p>{item.description}</p>
         <p className="font-semibold">${item.price.toFixed(2)}</p>
       </div>
-      <div className="card-action flex flex-col justify-end items-end gap-5">
+      <div className="flex flex-col items-end justify-end gap-5 card-action">
         <form
           onSubmit={submitHandler}
-          className="flex flex-row justify-end items-end gap-4"
+          className="flex flex-row items-end justify-end gap-4"
         >
           {/* <span className="font-bold">Amount: </span> */}
           <input
@@ -51,7 +51,7 @@ const Meal = (item) => {
             placeholder="1"
             min={1}
             max={5}
-            className="input input-bordered w-1/3 max-w-xs"
+            className="w-1/3 max-w-xs input input-bordered"
           />
           <button type="submit" className="btn btn-primary">
             Add to cart
